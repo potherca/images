@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+
+    <title>Images</title>
+    
+    <link rel="stylesheet" href="http://pother.ca/CssBase/css/ribbon.css" />
+<style>
+    h2 {
+        text-indent: 2em;
+        clear: left;
+    }
+
+    ul li { 
+        display: inline;
+    }
+    
+  	ul a { 
+        background-color: rgb(255, 255, 255);
+        border: 1px solid;
+        border-radius: 0.5em;
+        color: rgb(125,125,125);
+        display: block;
+        float: left;
+        height: 14.85em;
+        margin: 0 1em 1em;
+        overflow: hidden;
+  	    padding: 0.75em 0.65em 1.35em; 
+        position: relative;
+  	    text-align: center; 
+  	    text-decoration: none; 
+        text-indent: 0;
+        width: 10.5em;
+    }
+        
+      	ul a:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        
+		ul a:after { 
+		    content: attr(title); 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+	    }
+		
+		ul a:hover { 
+	        color: rgb(0,0,0);
+
+		    -webkit-transform: scale(1.25); 
+		    -moz-transform: scale(1.25); 
+		    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); 
+		    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5); 
+		    position: relative; 
+		    z-index: 1; 
+	    }
+	    
+    ul img { 
+        max-width: 100%; 
+        max-height: 100%;
+        vertical-align: middle;
+        border-radius: 0.35em;
+    }
+
+    .folder {
+        display: block;
+        text-indent: 1em;
+        margin: 0;
+    }
+    
+    .toggle-link {
+        cursor: pointer;
+    }
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
+        .toggle-link:hover::after {
+            content: ' -- Click to open/close section';
+            font-size: 60%;
+        }
+    
+    #list {
+        padding: 0;
+    }
+</style>
+    <script src="//code.jquery.com/jquery-2.0.2.js"></script>
+    <script src="github-directory-listing.js"></script>
+</head>
+
+<body>	
+
+	<div class="banner banner-right"><a href="https://github.com/peachey-schoorl/images">I'm a GitHub Repo!</a></div>
+	<ul id="list"></ul>
+    <div id="loading">Loading...</div>
+
+    <script type="text/javascript">    
+        var $Form, $List, $Loader;
+        
+        $List = $('#list');
+        $Loader = $('#loading');
+
+        $(document).ajaxStart(function(){
+            $Loader.show();
+         }).ajaxStop(function(){
+            $Loader.hide();
+         });
+        
+        var   sUser = 'peachey-schoorl'
+            , sRepo = 'images'
+            , sToken = '0a071341235612051eb295f2be448b1fe1752b2b' //undefined
+            , sRootUrl = '//images.peachey-schoorl.com/'
+            , sPath = ''// @todo get path from location object'
+        ;
+
+        addFilesToList(sPath, $List, sRootUrl, sUser, sRepo, sToken);
+    </script>
+</body>
+</html>
+
+
