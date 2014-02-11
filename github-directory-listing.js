@@ -53,10 +53,13 @@
                             // Directory
                             $SubList = $('<ul></ul>');
                             
-                            $Item = $('<li class="folder folder-open"></li>')
+                            $Item = $('<li class="folder folder-closed"></li>')
                             
                             $Header = $('<h2>' + p_oFile.name + '</h2>').addClass('toggle-link');
-                            $Header.on('click', function(){$(this).parent().find('ul').toggle();});
+                            $Header.on('click', function(){
+                                $(this).parent().toggleClass('folder-closed');
+                                $(this).parent().toggleClass('folder-open');
+                            });
                             
                             $Item.append($Header);
                             $Item.append($SubList);
