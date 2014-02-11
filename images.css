@@ -82,7 +82,7 @@
             text-decoration: underline;
         }
         .toggle-link:hover::after {
-            content: ' -- Click to contract section';
+            content: ' -- Click to collapse section';
             font-size: 60%;
         }
     
