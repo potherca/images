@@ -76,7 +76,7 @@
                                     '<li class="">'
                                     + '<a'
                                     + ' href="' + sImageUrl + '"'
-                                    + ' title="' + p_oFile.name + '"'
+                                    + ' title="' + p_oFile.name.substr(0, p_oFile.name.length-4) + '"'
                                     + '>' 
                                     + '<img src="' + sImageUrl + '">'
                                     + '</a></li>'
