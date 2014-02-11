@@ -1,3 +1,11 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+
+
+    body {
+        font-family: 'Droid Sans', Arial, sans-serif;
+    }
+
     h2 {
         text-indent: 2em;
         clear: left;
@@ -45,8 +53,11 @@
 
 		    -webkit-transform: scale(1.25); 
 		    -moz-transform: scale(1.25); 
-		    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); 
-		    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5); 
+		    transform: scale(1.25); 
+		    -webkit-box-shadow: 0 0.2em 0.45em rgba(0,0,0,.5); 
+		    -moz-box-shadow: 0 0.2em 0.45em rgba(0,0,0,.5);
+		    box-shadow: 0 0.2em 0.45em rgba(0,0,0,.5);
+		    overflow: visible;
 		    position: relative; 
 		    z-index: 1; 
 	    }
@@ -74,6 +85,19 @@
     .folder-closed a {
         font-size: 25%;
     }
+
+    .folder-closed  ul {
+        display: table;
+        margin: 0 auto;
+        max-width: 100%;
+        position: relative;
+        table-layout: fixed;
+    }
+    .folder-closed  li {
+        display: table-cell;
+        float: left;
+    }
+
         
     .toggle-link {
         cursor: pointer;
